@@ -86,33 +86,6 @@ Please write your name <strong>above AND AT THE TOP OF EVERY PAGE</strong></li>
 
 <li class="whatTypeQuestions pageBreakBefore"></li>
 
-<li class="pageBreakBefore"><p> (10 pts) Given the following struct definitions, exactly as in lab09 and lab09</p>
-  <pre>
-    struct Node {
-      int data;
-      Node *next;
-    };
-
-    struct LinkedList {
-      Node *head;
-      Node *tail;
-    };
-</pre>
-
-<p>Write the full function definition  for a function that would have the following prototype:</p>
-
-<pre>
-  int countOccurences(LinkedList * list, int k);
-</pre>
-
-<p>Comply with these instructions for full credit:</p>
-<ul>
-  <li>The function should return 0 if <code>list</code> is NULL, or the the linked list that is pointed to is an empty list.</li>
-  <li>Otherwise, the function should go through the linked list and count the number of nodes in the list that have the value <code>k</code> in the data member.</li>
-  <li>Assume that any <code>#include</code> directives you need are ALREADY DONE.  I ONLY want the function definition.  I want the full function definition, and NOTHING ELSE.  PERIOD.</li>
- </ul>
-</li>
-
 
 <li class="pageBreakBefore"><p> (10 pts) In 24 hour time:</p>
   <ul>
@@ -183,8 +156,106 @@ problem)</p>
 </li>
 
 
+<li class="pageBreakBefore"><p> (10 pts) Given the following struct definitions, exactly as in lab09 and lab09</p>
+  <pre style="float:right; width:30em;">
+    struct Node {
+      int data;
+      Node *next;
+    };
+
+    struct LinkedList {
+      Node *head;
+      Node *tail;
+    };
+</pre>
+
+<p>Write the full function definition  for a function that would have the following prototype:</p>
+
+<pre>
+  int countOccurences(LinkedList * list, int k);
+</pre>
+
+<p>Comply with these instructions for full credit:</p>
+<ul>
+  <li>The function should return 0 if <code>list</code> is NULL, or the the linked list that is pointed to is an empty list.</li>
+  <li>Otherwise, the function should go through the linked list and count the number of nodes in the list that have the value <code>k</code> in the data member.</li>
+  <li>Assume that any <code>#include</code> directives you need are ALREADY DONE.  I ONLY want the function definition.  I want the full function definition, and NOTHING ELSE.  PERIOD.</li>
+ </ul>
+</li>
 
 
+  
+<li class="pageBreakBefore"><p> (10 pts) Again, given the following struct definitions, exactly as in lab09 and lab09</p>
+  <pre style="float:right; width:30em;">
+    struct Node {
+      int data;
+      Node *next;
+    };
+
+    struct LinkedList {
+      Node *head;
+      Node *tail;
+    };
+</pre>
+
+  <p>Here is a partial implementation of addIntToEndOfList.   It has one extra line of code added that will result in a memory leak, and it has one crucial line of code missing.</p>
+
+  <p>You have two jobs, and you must do this precisely as stated to get full credit:</p>
+  <ul>
+    <li>(5 pts) Add EXACTLY ONE LINE OF CODE, the missing line that will cause the function to work properly.</li>
+    <li>(5 pts) Cross out EXACTLY ONE LINE OF CODE, the one that causes a memory leak.</li>
+  </ul>
+
+  <p>HINT: Trace through the code with a picture, both starting from an empty list, and one that already has at least one node in it.  Think about what you WANT the "after" picture to look like, vs. what the code you see here actualy does.  Then you'll see both thing you need to fix.</p>
+
+  <p>NOTE: there may be 'other' ways to fix the code. I DON'T WANT THOSE.  Fix it according to the instructions.  Also, note that I've put exactly the same amount of space between each line, so that where the white space is is NOT a clue as to where the missing line of code should go.</p>
+
+
+<pre style="line-height:80%"> 
+  void addIntToEndOfList(LinkedList *list, int value) {
+
+
+   assert(list!=NULL); // if list is NULL, we can do nothing.
+
+  
+    Node *p;
+
+ 
+    p = new Node;
+
+  
+    p->data = value;
+
+  
+    p->next = NULL;
+
+  
+    if (list->head == NULL) {
+
+  
+       list->head = new Node;
+
+
+       list->head = p;
+
+  
+    } else {
+
+  
+       list->tail->next = p;
+
+  
+       list -> tail = p;
+
+  
+    }
+
+  
+  }
+</pre>    
+
+  
+</li>
 
 
 </ol>
