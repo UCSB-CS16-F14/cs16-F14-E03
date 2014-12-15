@@ -30,7 +30,17 @@
 <td class="hideShuffleColor">hide shuffle color</td>
 <td class="makeCopies">make copies</td>
 </tr>
-</table>
+  </table>
+
+  <form action="./index.html" method="get">
+    
+    Count: 
+    <input type="text" name="count" value="10">
+    Start:
+    <input type="text" name="start" value="1001">
+    <input type="submit" value="Submit">
+  </form>
+  
 </div>
 
 <div id="container">
@@ -76,118 +86,106 @@ Please write your name <strong>above AND AT THE TOP OF EVERY PAGE</strong></li>
 
 <li class="whatTypeQuestions pageBreakBefore"></li>
 
-<li class="pageBreakBefore"><p> (20 pts) Given the following struct definition:</p>
-<pre>
-struct Precip {
-  int day;
-  double inches;
-};
+<li class="pageBreakBefore"><p> (10 pts) Given the following struct definitions, exactly as in lab09 and lab09</p>
+  <pre>
+    struct Node {
+      int data;
+      Node *next;
+    };
+
+    struct LinkedList {
+      Node *head;
+      Node *tail;
+    };
 </pre>
 
-<p>Write the full function definition for a function that would have the following prototype.  The prameters to the function and the return value should be as described in the comment.</p>
+<p>Write the full function definition  for a function that would have the following prototype:</p>
 
 <pre>
-// days is an array with a month's worth of Precip structs 
-// numDays is the number of days in that month
-// return the total rainfall of all days in the month.
-double totalRainfall(Precip *days, int numDays);
+  int countOccurences(LinkedList * list, int k);
 </pre>
 
-<p>Answer in the space below</p>
-
-
-
+<p>Comply with these instructions for full credit:</p>
+<ul>
+  <li>The function should return 0 if <code>list</code> is NULL, or the the linked list that is pointed to is an empty list.</li>
+  <li>Otherwise, the function should go through the linked list and count the number of nodes in the list that have the value <code>k</code> in the data member.</li>
+  <li>Assume that any <code>#include</code> directives you need are ALREADY DONE.  I ONLY want the function definition.  I want the full function definition, and NOTHING ELSE.  PERIOD.</li>
+ </ul>
 </li>
 
 
-<li class="pageBreakBefore"><p> (20 pts) Given the following struct for representing Complex numbers (which have a real part and an imaginary part):</p>
-<pre>
-// Complex number, e.g. a+bi
-struct Complex {
-  double real; // the a part
-  double imag; // the b part
+<li class="pageBreakBefore"><p> (10 pts) In 24 hour time:</p>
+  <ul>
+    <li>midnight is represented by the hour 0</li>
+    <li>1am through 11am are represented at hour=1 through hour=11</li>
+    <li>noon is represented by hour=12</li>
+    <li>1pm through 11pm are represetned by hour=13 through hour=23</li>
+    <li>minute is a value between 0 and 59.
+  </ul>
+
+Assume the following struct:
+  <pre>
+// Time of day in 24 hour time
+struct Time {
+   int h; // hour
+   int m; // minute
 };
-</pre>
+  </pre>
 
-<p>Write the full function definition for a function that would have the following prototype.  The prameters to the function and the return value should be as described in the comment.</p>
-
-<p>Note that you MUST follow the struct definition given here; pay close attention to the names
-of both the members of the struct, and the parameters to the function.</p>
-
-<p>Also note that the parameter p is a <em>pointer</em> and write your code accordingly.</p>
+<p>Write the full function definition  for a function that would have the following prototype:</p>
 
 <pre>
-// p is a pointer to a Complex number struct
-// a is the real part of the number.
-// b is the imag part (coefficient of i)
-void initComplex(Complex *p, double a, double b);
+  bool isValidTime(Time t);
 </pre>
 
-<p>Answer in the space below.</p>
-
+<p>Comply with these instructions for full credit:</p>
+<ul>
+  <li>The function should return true if both of the members of the struct t are valid values for a struct Time.  Otherwise the function should return false.</li>
+  <li>Assume that any <code>#include</code> directives you need are ALREADY DONE.  I ONLY want the function definition.  I want the full function definition, and NOTHING ELSE.  PERIOD.</li>
+ </ul>
 </li>
 
 
 
 <li class="pageBreakBefore"><p> (10 pts) Given the same struct definition as in the previous 
-problem:</p>
+    problem, with the same understanding of how are the fields for hour and minutes are to be treated
+  in 24 hour time:</p>
 
-<pre>
-// Complex number, e.g. a+bi
-struct Complex {
-  double real; // the a part
-  double imag; // the b part
+    <pre>
+// Time of day in 24 hour time
+struct Time {
+   int h; // hour
+   int m; // minute
 };
-</pre>
+  </pre>
 
-<p>And given the same function prototype:</p>
-
-<pre>
-// p is a pointer to a Complex number struct
-// a is the real part of the number.
-// b is the imag part (coefficient of i)
-void initComplex(Complex *p, double a, double b);
-</pre>
-
-
-<p>And given the following prototype, for a function you are NOT required to write, but
-may assume is ALREADY DEFINED:</p>
+<p>And given the same function prototype for <code>isValidTime</code>,
+which you can assume is ALREADY DEFINED and available for you to use (do not redefine it in this
+problem)</p>
 
 <pre>
-string complexToString(Complex c);
+  bool isValidTime(Time t);
 </pre>
 
-<p>Fill in the missing line of code in the main program below after the 
-comment that says TODO.</p>
 
-<p>You may assume that the header file <code>complex.h</code> contains the struct definition and the function
-prototype given above.</p>
+<p>Write the full function definition  for a function that would have the following prototype:</p>
 
 <pre>
-#include &lt;iostream&gt;
-using namespace std;
-
-#include "complex.h"
-
-int main() {
-  Complex c;
-
-  // TODO: Write a function call to initComplex that sets
-  // the real part to 2.3 and the imaginary part to 4.5
-
-
-
-
-
-
-  // Show result
-
-  cout &lt;&lt; "c=" &lt;&lt; complexToString(c) &lt;&lt; endl;
-  return 0;
-}
+  bool setTime(Time *t, int hour, int min);
 </pre>
 
+<p>Comply with these instructions for full credit:</p>
+<ul>
+  <li>If the pointer t is NULL, return false, and do nothing.</li>
+  <li>If the pointer t is not NULL, copy the values from hour and min into the corresponding fields in the struct pointed to by t.</li>
+  <li>Then, USING A FUNCTION CALL TO isValidTime, NOT BY REPEATED THE CODE YOU WROTE FOR THAT FUNCTION, check whether the struct you just initialized is valid.  If so, return true, otherwise return false.   Hint: be careful about matching the types of formal and actual parameters.</li>
+</ul>
 </li>
+
+
+
+
+
 
 </ol>
 
