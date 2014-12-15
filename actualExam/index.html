@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CS16, F14, E03, Final Exam</title>
+
+
+<script src="jquery-1.5.1.min.js"></script>
+<script src="jquery.shuffle.js"></script>
+<link rel="stylesheet" type="text/css" href="exam.css" />
+<style type="text/css">
+</style>
+<script type="text/javascript" src="../purl/purl.js" ></script>
+<script type="text/javascript" src="bits.js" ></script>
+<script type="text/javascript" src="random.js" ></script>
+<script type="text/javascript" src="spaceIt.js" ></script>
+<script type="text/javascript" src="radix.js" ></script> 
+<script type="text/javascript" src="argcArgv.js" ></script> 
+<script type="text/javascript" src="whatType.js" ></script> 
+<script type="text/javascript" src="exam.js" ></script>
+
+
+</head>
+
+<body>
+
+<div class="controls"><table>
+<tr>
+<td class="showAnswerKey">hide answer key</td>
+<td class="shuffleNow">shuffle now</td>
+<td class="hideShuffleColor">hide shuffle color</td>
+<td class="makeCopies">make copies</td>
+</tr>
+</table>
+</div>
+
+<div id="container">
+
+<h1 class="instructions"> CS16&mdash;Final Exam<br />
+<span class="subhead">E03, F14, Phill Conrad, UC Santa Barbara<br />
+Wednesday, 12/15/2014</span></h1>
+
+
+<p class="instructions"><strong>Name:</strong> ___________________________________________________</p>
+<p class="instructions"><br />
+<strong>Umail Address: </strong>______________________________@ umail.ucsb.edu<br />
+</p>
+
+
+
+<div class="instructions">
+<ul>
+<li>
+Please write your name <strong>above AND AT THE TOP OF EVERY PAGE</strong></li>
+
+<li>Be sure you turn in every page of this exam.
+  <ul><li> Each exam is numbered (e.g. Exam #137).</li>
+  <li>Each pages is numbered (e.g. Page 1, Page 2, etc.)</li>
+  <li>The last page clearly says "End of Exam".</li>
+ </ul></li>
+<li> This exam is <strong>closed book, closed notes</strong>, <strong>closed mouth, cell phone off</strong></li>
+
+<li class="instructions">You are permitted <strong>one sheet of paper</strong> (max size 8.5x11&quot;) on which to write notes</li>
+<li class="instructions">These sheets will be collected with the exam, and might not be returned</li>
+<li class="instructions">Please write your name on your notes sheet</li>
+</ul>
+<hr />
+
+</div>
+
+
+<ol class="theQuestions">
+
+<li class="radixQuestions pageBreakBefore"><p>Please perform the following number conversions.</p></li>
+
+<li class="argcArgvQuestions pageBreakBefore"></li>
+
+<li class="whatTypeQuestions pageBreakBefore"></li>
+
+<li class="pageBreakBefore"><p> (20 pts) Given the following struct definition:</p>
+<pre>
+struct Precip {
+  int day;
+  double inches;
+};
+</pre>
+
+<p>Write the full function definition for a function that would have the following prototype.  The prameters to the function and the return value should be as described in the comment.</p>
+
+<pre>
+// days is an array with a month's worth of Precip structs 
+// numDays is the number of days in that month
+// return the total rainfall of all days in the month.
+double totalRainfall(Precip *days, int numDays);
+</pre>
+
+<p>Answer in the space below</p>
+
+
+
+</li>
+
+
+<li class="pageBreakBefore"><p> (20 pts) Given the following struct for representing Complex numbers (which have a real part and an imaginary part):</p>
+<pre>
+// Complex number, e.g. a+bi
+struct Complex {
+  double real; // the a part
+  double imag; // the b part
+};
+</pre>
+
+<p>Write the full function definition for a function that would have the following prototype.  The prameters to the function and the return value should be as described in the comment.</p>
+
+<p>Note that you MUST follow the struct definition given here; pay close attention to the names
+of both the members of the struct, and the parameters to the function.</p>
+
+<p>Also note that the parameter p is a <em>pointer</em> and write your code accordingly.</p>
+
+<pre>
+// p is a pointer to a Complex number struct
+// a is the real part of the number.
+// b is the imag part (coefficient of i)
+void initComplex(Complex *p, double a, double b);
+</pre>
+
+<p>Answer in the space below.</p>
+
+</li>
+
+
+
+<li class="pageBreakBefore"><p> (10 pts) Given the same struct definition as in the previous 
+problem:</p>
+
+<pre>
+// Complex number, e.g. a+bi
+struct Complex {
+  double real; // the a part
+  double imag; // the b part
+};
+</pre>
+
+<p>And given the same function prototype:</p>
+
+<pre>
+// p is a pointer to a Complex number struct
+// a is the real part of the number.
+// b is the imag part (coefficient of i)
+void initComplex(Complex *p, double a, double b);
+</pre>
+
+
+<p>And given the following prototype, for a function you are NOT required to write, but
+may assume is ALREADY DEFINED:</p>
+
+<pre>
+string complexToString(Complex c);
+</pre>
+
+<p>Fill in the missing line of code in the main program below after the 
+comment that says TODO.</p>
+
+<p>You may assume that the header file <code>complex.h</code> contains the struct definition and the function
+prototype given above.</p>
+
+<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+#include "complex.h"
+
+int main() {
+  Complex c;
+
+  // TODO: Write a function call to initComplex that sets
+  // the real part to 2.3 and the imaginary part to 4.5
+
+
+
+
+
+
+  // Show result
+
+  cout &lt;&lt; "c=" &lt;&lt; complexToString(c) &lt;&lt; endl;
+  return 0;
+}
+</pre>
+
+</li>
+
+</ol>
+
+
+
+
+<div  class="pageBreakBefore" >
+   <hr />
+ <h2 class="instructions">End of Exam</h2>
+ <p class="instructions"><span class="pointCount">Total points: ?</span></p>
+ </div><!-- end of exam closing stuff -->
+
+
+
+</div> <!-- id="container" -->
+
+<div style="page-break-before:always;"><p>This page left blank to ensure exams start on even page<p></div>
+
+<div id="containerCopies"></div>
+
+</body>
+</html>
