@@ -17,8 +17,7 @@ h1 span.subhead {font-size: 0.8em;}
     page-break-before: always; padding-top: 30px;
   }
 
-  .examNumber { page-break-before: always; }
-
+  
 
   ol li ol li {list-style-type:lower-alpha;}
    ol li ol li ol li {list-style-type: lower-roman;}
@@ -163,12 +162,19 @@ table.initialsTable tr td { font-size: 9pt; font-family: Arial Narrow, sans-seri
 
 td.blackRight {border-right: 4px black solid;}
 
-div.examNumber { font-weight: bold; margin-bottom: 1em;
-		 border-bottom: 1px; }
-
 
 .radixQuestions ol li {padding-bottom:3em;}
 
 .argcArgvQuestions ol li {padding-bottom:3em;}
 
-.whatTypeQuestions ol li {padding-bottom:1.5em;}
+.whatTypeQuestions ol li {padding-bottom:10px;}
+
+div.examNumber { page-break-before: always;  width: 99%; }
+
+div.examNumber { font-weight: bold; margin-bottom: 1em; border:none; }
+  
+table.pageHeaderTable { border-style: none;  width: 98%;  }
+
+hr.pageHeader { margin-top: 1px; margin-bottom-1px; padding-top: 1px; padding-bottom: 1px;}
+
+  td.bigPageNum { font-size: 40px; "Arial Black", Gadget, sans-serif; font-weigt: bold;} 

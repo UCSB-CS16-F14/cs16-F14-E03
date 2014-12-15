@@ -3,9 +3,9 @@
 
 
 function generatePageHeader(examNum,pageNum) {
-    return "<div class='examNumber'>Exam #"
+    return "<div class='examNumber'><table class='pageHeaderTable'><tr><td class='bigPageNum' width='15%'>" + pageNum + "</td><td style='vertical-align:bottom; width:70%;'> Exam #" +
 	+ examNum + ' Page: ' + pageNum + 
-	" Name: _____________________________________";
+	" Name: _____________________________________</td><td class='bigPageNum' width='15%'>" + examNum + " </td></tr></table></div>";
 }
 
 function pointCountText(text) {
@@ -20,20 +20,19 @@ function pointCountText(text) {
     return totalPts;
 }
 
+
     var answerKeyVisible = true;
-    var shuffleColorVisible = true;
+
 	
     $(document.body).ready(function () {
 
-	    var url = purl(); //Parse the current URL using the purl library
+	
+	  var url = purl(); //Parse the current URL using the purl library
 	    
-	    var startExamNum = parseInt(url.param("start"));
-	    var examCount = parseInt(url.param("count"));
+	  var startExamNum = parseInt(url.param("start"));
+	  var examCount = parseInt(url.param("count"));
 
-          $('.initialsTableDiv').load('initialsTable.html');
-
-
-	  $(".showAnswerKey").click(function(){
+	$(".showAnswerKey").click(function(){
 	      if (answerKeyVisible)  {
                   // We are toggling back to no answers visible, 
                   // and bringing back hidden stuff
@@ -69,6 +68,8 @@ function pointCountText(text) {
  	        $(".showAnswerKey").each(function (i) {$(this).text("hide answer key");});
 	      }
       });
+	
+
 	
      $(".makeCopies").click(function(){
 	     $(this).css("background-color","red");
@@ -113,10 +114,11 @@ function pointCountText(text) {
 		     var theHTML = generatePageHeader(sequence, n+1);
 		     console.log("pageBreakBefore n= " + n + " sequence=" + sequence);
 		     console.log("pageBreakBefore, theHTML=" + theHTML);
-			     $(this).before( $('<div/>', { class: 'examNumber',
+		     $(this).before(theHTML);
+/*			     $(this).before( $('<div/>', { class: 'examNumber',
 					     text: 'Exam #' + sequence + ' Page: ' + (n+1)
 					     + " Name: _____________________________________",
-					     }));
+					     })); */
                              $(this).before($('<hr/>', {class: 'pageHeader'}));
 
 		      }); 
@@ -142,47 +144,7 @@ function pointCountText(text) {
 	     
 	 });
 
-
-    $(".shuffleNow").click(function(){
-         $(".shuffle").each(function (i) { $(this).shuffle(); });
-         $(".selectOne").each(function (i) { $(this).selectOne(); });	
-
-
-
-         $(".shuffledTFQs").each(function (i) { 
-             if (i%2==1) {
-               $(this).css("pageBreakBefore","always");
-               $(this).css("margin-bottom","3em");
-             } else {
-               $(this).css("pageBreakBefore","avoid");
-               $(this).css("margin-bottom","0em");
-             }
-
-          });
-
-         alert("Shuffled!");
-    });
 	
-     $(".hideShuffleColor").click(function(){
-
-       if (shuffleColorVisible)  {
-          $(".shuffle").each(function (i) {
-   	  this.style.color = "#000";
-          this.style.backgroundColor = "#fff";
-          }); 
-          shuffleColorVisible = false;
-          $(".hideShuffleColor").each(function (i) {$(this).text("show shuffle color");});
-       } else {
-          $(".shuffle").each(function (i) {
-   	  this.style.color = "#000";
-          this.style.backgroundColor = "#efe";
-          }); 
-          shuffleColorVisible = true;
-          $(".hideShuffleColor").each(function (i) {$(this).text("hide shuffle color");});
-       }
-	
-      }); // hideShuffleColor click function
-		
 
      
 	

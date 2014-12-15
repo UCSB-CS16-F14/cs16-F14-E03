@@ -23,29 +23,21 @@
 
 <body>
 
-<div class="controls"><table>
-<tr>
-<td class="showAnswerKey">hide answer key</td>
-<td class="shuffleNow">shuffle now</td>
-<td class="hideShuffleColor">hide shuffle color</td>
-<td class="makeCopies">make copies</td>
-</tr>
-  </table>
-
-  <form action="./index.html" method="get">
-    
-    Count: 
-    <input type="text" name="count" value="10">
-    Start:
-    <input type="text" name="start" value="1001">
-    <input type="submit" value="Submit">
+  <div class="controls">  <form action="./index.html" method="get">
+      <table>
+      <tr><td class="showAnswerKey">hide answer key</td>
+      <td>Count: <input type="text" name="count" value="10"></td>
+	<td>Start: <input type="text" name="start" value="1001"></td>
+    	  <td><input type="submit" value="Submit"></td>
+         <td class="makeCopies">Make Copies</td>
+      </tr>
+     </table>
   </form>
   
 </div>
 
 <div id="container">
-
-<h1 class="instructions"> CS16&mdash;Final Exam<br />
+<h1 class="instructions pageBreakBefore"> CS16&mdash;Final Exam<br />
 <span class="subhead">E03, F14, Phill Conrad, UC Santa Barbara<br />
 Wednesday, 12/15/2014</span></h1>
 
@@ -82,10 +74,9 @@ Please write your name <strong>above AND AT THE TOP OF EVERY PAGE</strong></li>
 
 <li class="radixQuestions pageBreakBefore"><p>Please perform the following number conversions.</p></li>
 
-<li class="argcArgvQuestions pageBreakBefore"></li>
+
 
 <li class="whatTypeQuestions pageBreakBefore"></li>
-
 
 <li class="pageBreakBefore"><p> (10 pts) In 24 hour time:</p>
   <ul>
@@ -156,7 +147,13 @@ problem)</p>
 </li>
 
 
-<li class="pageBreakBefore"><p> (10 pts) Given the following struct definitions, exactly as in lab09 and lab09</p>
+<li class="pageBreakBefore"><p> (10 pts) Given the struct definitions shown below (which are exactly as in lab09 and lab09), 
+write the full function definition  for a function that would have the following prototype:</p>
+
+<pre>
+  int countOccurences(LinkedList * list, int k);
+</pre>
+
   <pre style="float:right; width:30em;">
     struct Node {
       int data;
@@ -169,11 +166,6 @@ problem)</p>
     };
 </pre>
 
-<p>Write the full function definition  for a function that would have the following prototype:</p>
-
-<pre>
-  int countOccurences(LinkedList * list, int k);
-</pre>
 
 <p>Comply with these instructions for full credit:</p>
 <ul>
@@ -211,7 +203,7 @@ problem)</p>
   <p>NOTE: there may be 'other' ways to fix the code. I DON'T WANT THOSE.  Fix it according to the instructions.  Also, note that I've put exactly the same amount of space between each line, so that where the white space is is NOT a clue as to where the missing line of code should go.</p>
 
 
-<pre style="line-height:80%"> 
+<pre style="line-height:75%"> 
   void addIntToEndOfList(LinkedList *list, int value) {
 
 
@@ -257,13 +249,12 @@ problem)</p>
   
 </li>
 
+<li class="argcArgvQuestions pageBreakBefore"></li>
 
 </ol>
 
 
-
-
-<div  class="pageBreakBefore" >
+<div style="margin-top:10em;">
    <hr />
  <h2 class="instructions">End of Exam</h2>
  <p class="instructions"><span class="pointCount">Total points: ?</span></p>
@@ -275,7 +266,9 @@ problem)</p>
 
 <div style="page-break-before:always;"><p>This page left blank to ensure exams start on even page<p></div>
 
-<div id="containerCopies"></div>
+<div id="containerCopies" class="pageBreakBefore"></div>
+
+
 
 </body>
 </html>
